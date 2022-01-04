@@ -25,7 +25,7 @@
 &kp TAB    &kp Q    &kp W    &kp E      &kp R      &kp T                                      &kp Y         &kp U       &kp I      &kp O    &kp P     &kp MINUS
 &kp ESC    &kp A    &kp S    &kp D      &kp F      &kp G                                      &kp H         &kp J       &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z    &kp X    &kp C      &kp V      &kp B        &kp LBKT        &kp RBKT      &kp N         &kp M       &kp COMMA  &kp DOT  &kp FSLH  &kp RET 
-                             &kp LALT   &kp LGUI   &lt 3 SPACE  &lt 2 LGUI      &kp SPACE     &mo 2         &kp BSPC    &kp RCTRL 
+                             &kp LALT   &kp LGUI   &lt 3 SPACE  &lt 2 LGUI      &kp SPACE     &lt 3 SPACE   &kp BSPC    &kp RCTRL 
 			>;    
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -51,17 +51,17 @@
 
 		raise_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-// |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
-// |   F1  |  F2 | SAVE |  F4  |  F5  |  F6  |                  |  <-  |  down |  up   |  ->  |       |       |
-// |       |  F8 |  F9 | copy | paste|  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
-//                     |      |      |      |        |  |       |      |       |       |
+// |       |        |     |      |      |      |                   |      |       |       |      |       |       |
+// |   `   |  1     |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
+// |       |  LOWER |     |      |      |      |                   |  <-  |  down |  up   |  ->  |       |       |
+// |       |        |     |      |      |      |        |  |       | play | vol - | vol + | next |       |       |
+//                        |      |      |      |        |  |       |      |       |       |
 			bindings = <
-&trans      &trans   &trans        &trans        &trans           &trans                       &trans      &trans      &trans      &trans      &trans     &trans
-&kp GRAVE   &kp N1   &kp N2        &kp N3        &kp N4           &kp N5                       &kp N6      &kp N7      &kp N8      &kp N9      &kp N0     &trans
-&kp F1      &kp F2   &kp C_AC_SAVE &kp F4        &kp F5           &kp F6                       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans     &trans  
-&trans      &kp F8   &kp F9        &kp C_AC_COPY &kp C_AC_PASTE   &kp F12   &trans   &trans    &kp PLUS    &kp MINUS   &kp EQUAL   &kp LBKT    &kp RBKT   &kp BSLH
-                                   &trans        &trans           &trans    &trans    &mo 3    &trans      &trans      &trans  
+&trans      &trans     &trans      &trans        &trans       &trans                       &trans      &trans        &trans          &trans       &trans     &trans
+&kp GRAVE   &kp N1     &kp N2      &kp N3        &kp N4       &kp N5                       &kp N6      &kp N7        &kp N8          &kp N9       &kp N0     &trans
+&trans      &mo 1      &trans      &trans        &trans       &trans                       &kp LEFT    &kp DOWN      &kp UP          &kp RIGHT    &trans     &trans  
+&trans      &trans8    &trans      &trans        &trans       &trans    &trans    &trans   &kp C_PP    &kp C_VOL_DN  &kp C_VOL_UP    &kp C_NEXT   &trans     &trans 
+                                   &trans        &trans       &trans    &trans    &mo 3    &trans      &trans        &trans  
 			>;    
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -72,14 +72,14 @@
 // ------------------------------------------------------------------------------------------------------------
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |       |
-// |       |     |     |      |      |      |                   | play | vol - | vol + | next |       |       |
-// |       |     |     |      |      |      |        |  |       |      |       |       |      |       |       |
+// |       |LOWER|     |      |      |      |                   |  +   |   -   |   =   |  [   |   ]   |   \   |
+// |       |     |     |      |      |      |        |  |       | play | vol - | vol + | next |       |       |
 //                     |      |      |      |        |  |       |      |       |       |
 			bindings = <
-&trans       &trans             &trans              &trans              &trans         &trans                     &trans    &trans        &trans          &trans       &trans    &trans
+&trans       &trans             &trans              &trans              &trans         &trans                           &trans    &trans        &trans          &trans       &trans    &trans
 &kp F1       &kp EXCL           &kp AT              &kp HASH            &kp DOLLAR     &kp PRCNT                        &kp CARET &kp AMPS      &kp KP_MULTIPLY &kp LPAR     &kp RPAR  &trans
-&trans       &trans             &trans              &trans              &trans         &trans                           &kp C_PP  &kp C_VOL_DN  &kp C_VOL_UP    &kp C_NEXT   &trans    &trans  
-&trans       &trans             &trans              &trans              &trans         &trans        &trans   &trans    &trans    &trans        &trans          &trans       &trans    &trans
+&trans       &mo 1              &trans              &trans              &trans         &trans                           &kp PLUS  &kp MINUS     &kp EQUAL       &kp LBKT     &kp RBKT  &kp BSLH
+&trans       &trans             &trans              &trans              &trans         &trans        &trans   &trans    &kp C_PP  &kp C_VOL_DN  &kp C_VOL_UP    &kp C_NEXT   &trans     &trans
                                                     &trans              &trans         &trans        &trans   &trans    &trans    &trans        &trans
 			>;
 

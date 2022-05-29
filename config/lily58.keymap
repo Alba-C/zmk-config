@@ -15,7 +15,7 @@
 #define LOWER   3
 
 &caps_word {
-    continue-list = <UNDER MINUS BSPC>;
+    continue-list = <UNDER MINUS BSPC LSHIFT>;
 };
 
 / {

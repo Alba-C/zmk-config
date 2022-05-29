@@ -22,6 +22,7 @@
     macros {
         zed_em_kay: zed_em_kay {
             label = "ZM_zed_em_kay";
+						wait-ms = <10>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -32,20 +33,26 @@
         };
        del_last_word: del_last_word {
             label = "del_last_word";
+						wait-ms = <10>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LSHFT &kp LALT>
-                , <&macro_tap &kp LEFT &kp BACKSPACE>
-                , <&macro_release &kp LSHFT &kp LALT>
+                = <&macro_tap_time 10>
+								, <&macro_press &kp LSHFT &kp LALT>
+                , <&macro_tap &kp LEFT>
+                , <&macro_release &kp LALT>
+                , <&macro_tap &kp BACKSPACE>
+                , <&macro_release &kp LSHFT>
                 ;
         };
        opt_shft_dwn: opt_shft_dwn {
             label = "opt_shft_dwn";
+						wait-ms = <10>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LSHFT &kp LALT>
+                =  <&macro_tap_time 10>
+								, <&macro_press &kp LSHFT &kp LALT>
                 , <&macro_tap &kp DOWN>
                 , <&macro_release &kp LSHFT &kp LALT>
                 ;

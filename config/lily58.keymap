@@ -30,6 +30,17 @@
                 , <&macro_release &kp LSHFT>
                 ;
         };
+       del_last_word: del_last_word {
+            label = "del_last_word";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp LEFT>
+								, <&macro_tap &kp BACKSPACE>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
     };
 };
 / {
@@ -80,11 +91,11 @@
 // |       |        |     |      |      |      |        |  |       | play | vol - | vol + | next |       |       |
 //                        |      |      |      |        |  |       |      |       |       |
 			bindings = <
-&trans      &trans        &trans      &trans        &trans       &trans                       &trans      &trans        &trans          &trans       &trans     &trans
-&kp GRAVE   &kp N1        &kp N2      &kp N3        &kp N4       &kp N5                       &kp N6      &kp N7        &kp N8          &kp N9       &kp N0     &trans
-&trans      &tog NUMPAD   &trans      &trans        &trans       &trans                       &kp LEFT    &kp DOWN      &kp UP          &kp RIGHT    &trans     &trans  
-&trans      &trans        &trans      &trans        &trans       &trans    &trans    &trans   &kp C_PP    &kp C_VOL_DN  &kp C_VOL_UP    &kp C_NEXT   &trans     &trans 
-                                      &trans        &trans       &trans    &trans    &trans   &trans      &kp K_BACK    &trans  
+&trans      &trans        &trans      &trans        &trans       &trans                       &trans      &trans           &trans          &trans       &trans     &trans
+&kp GRAVE   &kp N1        &kp N2      &kp N3        &kp N4       &kp N5                       &kp N6      &kp N7           &kp N8          &kp N9       &kp N0     &trans
+&trans      &tog NUMPAD   &trans      &trans        &trans       &trans                       &kp LEFT    &kp DOWN         &kp UP          &kp RIGHT    &trans     &trans  
+&trans      &trans        &trans      &trans        &trans       &trans    &trans    &trans   &kp C_PP    &kp C_VOL_DN     &kp C_VOL_UP    &kp C_NEXT   &trans     &trans 
+                                      &trans        &trans       &trans    &trans    &trans   &trans      &del_last_word   &trans  
 			>;    
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;

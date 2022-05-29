@@ -24,13 +24,13 @@
 // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                              |  Y   |  U    |  I    |  O   |   P   |  DEL  | 
 // |  ESC  |  A  |  S  |  D   |  F   |  G   |                              |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |    "down"/NUMPAD |  |  "Up"  |  N   |  M    |  ,    |  .   |   /   | Return|
-//                     | ALT  | GUI  |space/LOWER |cmd/RAISE|     | ENTER  | LOWER| BSPC  | RCTRL |
+//                     | ALT  | GUI  |space/LOWER | RAISE|     | ENTER  | LOWER| BSPC  | RCTRL |
 			bindings = <
 &kp GRAV    &kp N1   &kp N2   &kp N3     &kp N4     &kp N5                                             &kp N6        &kp N7          &kp N8     &kp N9   &kp N0    &kp BACKSPACE
 &kp TAB     &kp Q    &kp W    &kp E      &kp R      &kp T                                              &kp Y         &kp U           &kp I      &kp O    &kp P     &kp DELETE
 &kp ESC     &kp A    &kp S    &kp D      &kp F      &kp G                                              &kp H         &kp J           &kp K      &kp L    &kp SEMI  &kp SQT
 &sk LSHIFT  &kp Z    &kp X    &kp C      &kp V      &kp B            &lt NUMPAD DOWN     &kp UP        &kp N         &kp M           &kp COMMA  &kp DOT  &kp FSLH  &kp RET 
-                              &kp LALT   &kp LGUI   &lt LOWER SPACE  &lt RAISE LGUI      &kp SPACE     &mo LOWER     &kp BACKSPACE   &kp RCTRL 
+                              &kp LALT   &kp LGUI   &lt LOWER SPACE  &mo RAISE           &kp SPACE     &mo LOWER     &kp BACKSPACE   &kp RCTRL 
 			>;    
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -78,13 +78,13 @@
 // |       |      |     |      |      |      |                   |      |       |       |      |       |       |
 // |   `   |  !   |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |       |
 // |       |NUMPAD|     |      |      |      |                   |  +   |   -   |   =   |  [   |   ]   |   \   |
-// |  caps word     |      |     |      |      |      |        |  |       | play | vol - | vol + | next |       |       |
+// |capsWRD|      |     |      |      |      |        |  |       | play | vol - | vol + | next |       |       |
 //                      |      |      |      |        |  |       |      |       |       |
 			bindings = <
-&trans   &trans         &trans    &trans      &trans         &trans                        &trans    &trans        &trans          &trans       &trans    &trans
-&trans   &kp EXCL       &kp AT    &kp HASH    &kp DOLLAR     &kp PRCNT                     &kp CARET &kp AMPS      &kp KP_MULTIPLY &kp LPAR     &kp RPAR  &trans
-&trans   &tog NUMPAD    &trans    &trans      &trans         &trans                        &kp PLUS  &kp MINUS     &kp EQUAL       &kp LBKT     &kp RBKT  &kp BSLH
-&capt_word   &trans         &trans    &trans      &trans         &trans     &trans   &trans    &kp C_PP  &kp C_VOL_DN  &kp C_VOL_UP    &kp C_NEXT   &trans     &trans
+&trans       &trans         &trans    &trans      &trans         &trans                        &trans    &trans        &trans          &trans       &trans    &trans
+&trans       &kp EXCL       &kp AT    &kp HASH    &kp DOLLAR     &kp PRCNT                     &kp CARET &kp AMPS      &kp KP_MULTIPLY &kp LPAR     &kp RPAR  &trans
+&trans       &tog NUMPAD    &trans    &trans      &trans         &trans                        &kp PLUS  &kp MINUS     &kp EQUAL       &kp LBKT     &kp RBKT  &kp BSLH
+&caps_word   &trans         &trans    &trans      &trans         &trans     &trans   &trans    &kp C_PP  &kp C_VOL_DN  &kp C_VOL_UP    &kp C_NEXT   &trans     &trans
                                   &trans      &trans         &trans     &trans   &trans    &trans    &trans        &trans
 			>;
 
